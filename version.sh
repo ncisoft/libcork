@@ -17,8 +17,7 @@
 # Note that the RELEASE-VERSION file should *not* be checked into git;
 # please add it to your top-level .gitignore file.
 
-#version=$(git describe)
-version="0.15.0"
+version=$(git describe|cut -d '-' -f1)
 if [ -n ${version} ]; then
     # If we got something from git-describe, write the version to the
     # output file.
